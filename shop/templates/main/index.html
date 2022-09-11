@@ -14,5 +14,8 @@
 {% for i in stat %}
     <h3>{{ i.name }}</h3>
 {% endfor %}
+{% for i in stat %}
+    <img src="{{ i.image.url }}">
+{% endfor %}
 </body>
 </html>

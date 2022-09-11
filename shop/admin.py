@@ -9,7 +9,7 @@ class CategyAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'available', 'created', 'uploaded']
+    list_display = ['name', 'slug', 'price', 'available', 'created', 'uploaded', 'image']
     list_filter = ['available', 'created', 'created']
     list_editable = ['price', 'available']
     prepopulated_fields = {'slug': ('name', )}
