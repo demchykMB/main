@@ -3,14 +3,14 @@
 {% block content %}
 <h1>Товары</h1>
 <div class="row">
-    {% for product in stat %}
+    {% for i in stat %}
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img src="{{ product.image }}}" class="card-img-top" alt="Card image caption">
+            <img src="{{ i.image.url }}" class="card-img-top" alt="Foto">
             <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">${{ product.price }}</p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <h5 class="card-title">{{ i.name }}</h5>
+                <p class="card-text">${{ i.price }}</p>
+                <a href="#" class="btn btn-primary">В корзину</a>
             </div>
         </div>
     </div>
