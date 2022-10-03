@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en" xmlns:fb="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Магазин</title>
+    <meta name="description" content="Название магазина" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/960.css' %}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/color.css' %}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ie.css' %}" media="screen" />
+    <script type="text/javascript" src="{% static 'js/shoppica.js' %}"></script>
+
+</head>
+
+<body class="s_layout_fixed">
+
+<div id="wrapper"> 
+  
+  <!-- ********************** --> 
+  <!--      H E A D E R       --> 
+  <!-- ********************** -->
+  <div id="header" class="container_12">
+    <div class="grid_12">
+    
+    	<a id="site_logo" href="{% url 'home' %}"></a>
+
+      <div id="system_navigation" class="s_nav">
+        <ul class="s_list_1 clearfix">
+          <li><a href="{% url 'home' %}">Главное меню</a></li>
+          <li><a href="">Регистрация\Вход</a></li>
+          <li><a href="cart.html">,,,,,,,,,,</a></li>
+        </ul>
+      </div>
+
+
+
+      </div>
+      
+      <div id="language_switcher" class="s_switcher"> <span class="s_selected">Валюта</span>
+        <ul class="s_options">
+          <li><a href="">Евро</a></li>
+          <li><a href="">Pound Sterling</a></li>
+          <li><a href="">US Dollar</a></li>
+        </ul>
+      </div>
+      
+      <div id="currency_switcher" class="s_switcher"> <span class="s_selected"><img src="{% static 'images/flags/gb.png' %}" alt="English" />Рус</span>
+        <ul class="s_options">
+          <li><a href=""><img src="{% static 'images/flags/gb.png' %}" alt="English" /> English</a></li>
+          <li><a href=""><img src="{% static 'images/flags/de.png' %}" alt="Deutsch" /> Deutsch</a></li>
+        </ul>
+      </div>
+
+      
+      <div id="cart_menu" class="s_nav">
+      	<a href="cart.html"><span class="s_icon"></span> <small class="s_text">Cart</small><span class="s_grand_total s_main_color">$0.00</span></a>
+        <div class="s_submenu s_cart_holder">
+          <p class="s_mb_0">0 items</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- end of header --> 
+
+  
+    <!-- ********************** -->
+  <!--      C O N T E N T     --> 
+  <!-- ********************** --> 
+  <div id="content" class="container_12">
+  
+    <div id="welcome" class="grid_12">
+      <h2>Приветстиве</h2>
+      <p> <a href="">Название</a> Описание магазина</p>
+          </div>
+    
+    <div class="clear"></div>
+    
+    <div id="special_home" class="grid_12">
+      <h2 class="s_title_1"><span class="s_main_color"></span>Книги</h2>
+      <div class="clear"></div>
+      <div class="s_listing s_grid_view clearfix">
+	        {% for i in stat %}
+                <div class="s_item grid_2"> <a class="s_thumb" href="product.html"><img src="{{ i.image.url }}" title={{ i.name }} alt="Название" /></a>
+                <h3><a href="product.html">{{ i.name }}</a></h3>
+                <p class="s_model">Product 4</p>
+                <p class="s_price s_promo_price"><span class="s_old_price"><span class="s_currency s_before">$</span>{{ i.price }}</span><span class="s_currency s_before">$</span>{{ i.price }}</p>
+                <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+            {% endfor %}
+          </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+      <div class="clear"></div>
+
+  <!-- end of content --> 
+  
+  <!-- ********************** --> 
+  <!--   S H O P   I N F O    --> 
+  <!-- ********************** --> 
+  <div id="shop_info">
+    <div id="shop_info_wrap">
+      <div class="container_12">
+        <div id="shop_description" class="grid_3">
+          <h2>О Нас</h2>
+          <p>Описание...</p>
+        </div>
+        <div id="shop_contacts" class="grid_3">
+          <h2>Контакты</h2>
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td valign="middle"><span class="s_icon_32"><span class="s_icon s_phone_32"></span>Номер телефона <br /></span></td>
+            </tr>
+            <tr>
+              <td valign="middle"><span class="s_icon_32"><span class="s_icon s_fax_32"></span>Факс  <br /></span></td>
+            </tr>
+            <tr>
+              <td valign="middle"><span class="s_icon_32"><span class="s_icon s_mail_32"></span>@email <br /> Email</span></td>
+            </tr>
+
+          </table>
+        </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <!-- end of shop info --> 
+  
+  
+  
+  <!-- ********************** -->
+  <!--      F O O T E R       -->
+  <!-- ********************** -->
+  <div id="footer" class="container_12">
+      <div class="clear"></div>
+      <div class="grid_12 border_eee"></div>
+    </div>
+  </div>
+  <!-- end of FOOTER --> 
+  
+</div>
+
+<div id="fb-root"></div>
+<script type="text/javascript">
+  window.fbAsyncInit = function() {
+    FB.init({appId: '0c18007de6f00f7ecda8c040fb76cd90', status: true, cookie: true,
+     xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+    '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+</body>
+</html>
