@@ -28,8 +28,8 @@
       <div id="system_navigation" class="s_nav">
         <ul class="s_list_1 clearfix">
           <li><a href="{% url 'home' %}">Главное меню</a></li>
-          <li><a href="">Регистрация\Вход</a></li>
-          <li><a href="cart.html">,,,,,,,,,,</a></li>
+          <li><a href="">Регистрация</a></li>
+          <li><a href="{% url 'login' %}">Вход</a></li>
         </ul>
       </div>
 
@@ -73,6 +73,8 @@
     <div id="welcome" class="grid_12">
       <h2>Приветстиве</h2>
       <p> <a href="">Название</a> Описание магазина</p>
+        {% block main %}
+        {% endblock %}
           </div>
     
     <div class="clear"></div>
