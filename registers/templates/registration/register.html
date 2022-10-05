@@ -1,0 +1,16 @@
+{% extends  'HTML/index.html' %}
+<html lang="en">
+<head>
+    <title>Title</title>
+</head>
+<body>
+{% block main %}
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}
+</body>
+</html>
