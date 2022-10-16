@@ -1,8 +1,5 @@
 {% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta charset="utf-8">
-<link href="{% static "bootstrap/css/bootstrap-responsive.css" %}" rel="stylesheet">
-<script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en" xmlns:fb="">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,6 +27,7 @@
 
       <div id="system_navigation" class="s_nav">
         <ul class="s_list_1 clearfix">
+            {# <li><a href="{% url 'add' %}">Добавить товар</a></li> #}
           <li><a href="{% url 'home' %}">Главное меню</a></li>
             {% if request.user.is_authenticated %}
                 <li>Добро пожаловать</li>
@@ -84,7 +82,7 @@
       <h2>Приветстиве</h2>
       <p> <a href="">Название</a> Описание магазина</p>
 
-          </div>
+    </div>
     
     <div class="clear"></div>
     
@@ -93,11 +91,11 @@
       <div class="clear"></div>
       <div class="s_listing s_grid_view clearfix">
 	        {% for i in stat %}
-                <div class="s_item grid_2"> <a class="s_thumb" href="product.html"><img src="{{ i.image.url }}" title={{ i.name }} alt="Название" /></a>
-                <h3><a href="product.html">{{ i.name }}</a></h3>
+                <div class="s_item grid_2"> <a class="s_thumb" href="{% url 'shop' %}"><img src="{{ i.image.url }}" title={{ i.name }} alt="Название" /></a>
+                <h3><a href="{% url 'shop' %}">{{ i.name }}</a></h3>
                 <p class="s_model">Product 4</p>
                 <p class="s_price s_promo_price"><span class="s_old_price"><span class="s_currency s_before">$</span>{{ i.price }}</span><span class="s_currency s_before">$</span>{{ i.price }}</p>
-                <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                <a class="s_button_add_to_cart" href="{% url 'shop' %}"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
             {% endfor %}
           </div>
