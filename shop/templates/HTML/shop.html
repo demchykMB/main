@@ -5,10 +5,19 @@
 </head>
 <body>
 {% block main %}
-        <Li><a>{{ products.id }}</a></Li>
-       <Li><a>{{ products.name }}</a></Li>
-        <Li><a>{{ products.price }}</a></Li>
-     <img src="{{ products.image.url }}">
+    <div class="card mb-3">
+    <h1 class="card-title"><center>{{ products.name }}</center></h1>
+    <center>
+        <img src="{{ products.image.url }}" width="220" height="220">
+    </center>
+  <div class="card-body">
+    <p class="card-text"><center>{{ products.description }}</center></p>
+    <span class="badge badge-success">{{ products.price }}</span>
+      <p class="card-text text-right">
+          <button type="button" class="btn btn-success">Добавить в корзину</button>
+      </p>
+  </div>
+</div>
 
 {% endblock %}
 </body>
