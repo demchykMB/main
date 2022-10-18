@@ -79,9 +79,6 @@
   {% block main %}
   {% endblock %}
     <div id="welcome" class="grid_12">
-      <h2>Приветстиве</h2>
-      <p> <a href="">Название</a> Описание магазина</p>
-
     </div>
     
     <div class="clear"></div>
@@ -91,11 +88,12 @@
       <div class="clear"></div>
       <div class="s_listing s_grid_view clearfix">
 	        {% for i in stat %}
-                <div class="s_item grid_2"> <a class="s_thumb" href="{% url 'shop' %}"><img src="{{ i.image.url }}" title={{ i.name }} alt="Название" /></a>
-                <h3><a href="{% url 'shop' %}">{{ i.name }}</a></h3>
-                <p class="s_model">Product 4</p>
+                <div class="s_item grid_2"> <a class="s_thumb" href="{% url 'news_pro' i.id %}"><img src="{{ i.image.url }}" title={{ i.name }} alt="Название" /></a>
+                <h3><a href="{% url 'news_pro' i.id %}">{{ i.name }}</a></h3>
+                <p class="s_model"></p>
                 <p class="s_price s_promo_price"><span class="s_old_price"><span class="s_currency s_before">$</span>{{ i.price }}</span><span class="s_currency s_before">$</span>{{ i.price }}</p>
-                <a class="s_button_add_to_cart" href="{#{% url 'HTML/detail.html' %}#}"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                    <a class="s_button_add_to_cart" href="{% url 'news_pro' i.id %}">
+                    <span class="s_icon_16"><span class="s_icon"></span>Описание</span></a>
                 </div>
             {% endfor %}
           </div>
