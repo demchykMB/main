@@ -1,8 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Product
-from django.contrib.auth import authenticate, login
-
-
 
 def index(request):
     stat = Product.objects.all()

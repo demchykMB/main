@@ -1,0 +1,15 @@
+{% extends  'HTML/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+{% block main %}
+<p class="price">${{ product.price }}</p>
+<form action="{% url "cart:cart_add" product.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Add to cart">
+
+    {% endblock %}
+</form>
+</body>
+</html>
